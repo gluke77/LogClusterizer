@@ -16,11 +16,16 @@ public class LogClusterizer {
 
     public void append(LogEntry logEntry) {
         for (LogEntryCluster cluster: clusters) {
+            //TODO: We expect that a message must only belong to no more than one cluster, right?
             if (cluster.appendIfMatches(logEntry)) {
                 return;
             }
         }
 
         clusters.add(new LogEntryCluster(logEntry));
+    }
+
+    public void append(String s) {
+        append(new LogEntry(s));
     }
 }
