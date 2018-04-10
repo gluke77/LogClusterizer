@@ -1,14 +1,11 @@
 package com.github.gluke77;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
-/**
- * Hello world!
- *
- */
-public class App 
-{
-    public static void main( String[] args ) throws IOException {
+public class App {
+    public static void main(String[] args) throws IOException {
 
         if (args.length < 1) {
             System.out.println("Usage: java -jar <JAR_FILE> <INPUT_FILE>");
@@ -24,10 +21,10 @@ public class App
 
         System.out.println("=====");
 
-        for (LogEntryCluster cluster: logClusterizer.getClusters()) {
+        for (LogEntryCluster cluster : logClusterizer.getClusters()) {
             //TODO: Do we want to skip one-message clusters?
             if (cluster.getMessages().size() > 1) {
-                for (String m: cluster.getMessages()) {
+                for (String m : cluster.getMessages()) {
                     System.out.println(m);
                 }
 

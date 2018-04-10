@@ -15,7 +15,7 @@ public class LogClusterizer {
     }
 
     public void append(LogEntry logEntry) {
-        for (LogEntryCluster cluster: clusters) {
+        for (LogEntryCluster cluster : clusters) {
             //TODO: We expect that a message must only belong to no more than one cluster, right?
             if (cluster.appendIfMatches(logEntry)) {
                 return;

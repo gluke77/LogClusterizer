@@ -7,9 +7,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import static org.junit.Assert.assertArrayEquals;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class LogClusterizerTest {
     @Test
@@ -47,7 +45,6 @@ public class LogClusterizerTest {
 
         assertEquals(expectedAlteringWords0.size(), cluster0.getAlteringWords().size());
         assertTrue(expectedAlteringWords0.containsAll(cluster0.getAlteringWords()));
-
 
 
         LogEntryCluster cluster1 = clusters.get(1);

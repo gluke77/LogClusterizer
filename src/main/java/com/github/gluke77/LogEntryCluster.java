@@ -36,10 +36,9 @@ public class LogEntryCluster {
 
 
     /**
-     *
      * @param logEntry
      * @return true if logEntry matches the pattern and was appended,
-     *          false otherwise
+     * false otherwise
      */
     public boolean appendIfMatches(LogEntry logEntry) {
         int pos = match(logEntry.getWords());
@@ -54,10 +53,9 @@ public class LogEntryCluster {
     }
 
     /**
-     *
      * @param words
      * @return alteringWordPosition if matches,
-     *          -1 otherwise
+     * -1 otherwise
      */
     public int match(String[] words) {
         if (words.length == pattern.length) {
